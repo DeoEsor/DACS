@@ -72,6 +72,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +97,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Vartumyan.Wpf.MVVM.Core\Vartumyan.Wpf.MVVM.Core.csproj">
+      <Project>{eb0f1d73-b758-4df4-a0a4-1b974558bc3a}</Project>
+      <Name>Vartumyan.Wpf.MVVM.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Vartumyan.Wpf.MVVM\Vartumyan.Wpf.MVVM.csproj">
+      <Project>{9a7bdb76-c392-4809-95b8-90e62f7a33a7}</Project>
+      <Name>Vartumyan.Wpf.MVVM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

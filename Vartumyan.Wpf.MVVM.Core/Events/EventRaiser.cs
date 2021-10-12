@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Vartumyan.Wpf.MVVM.Core
 {
@@ -18,7 +14,8 @@ namespace Vartumyan.Wpf.MVVM.Core
             handler?.Invoke(sender, new EventArgs<T>(value));
         }
 
-        public static void Raise<T>(this EventHandler<T> handler, object sender, T value) where T : EventArgs
+        public static void Raise<T>(this EventHandler<T> handler, object sender, T value) 
+            where T : EventArgs
         {
             handler?.Invoke(sender, value);
         }
