@@ -8,27 +8,21 @@ namespace Vartumyan.Wpf.MVVM.Core
         private readonly Predicate<object> _canExecute;
         private readonly Action<object> _execute;
 
-        private event EventHandler CanExecuteChangedInternal;
-
         public event EventHandler CanExecuteChanged
         {
             add
             {
                 CommandManager.RequerySuggested += value;
-                CanExecuteChangedInternal += value;
             }
             remove
             {
                 CommandManager.RequerySuggested -= value;
-                CanExecuteChangedInternal -= value;
             }
         }
 
         public RelayCommand(Action<object> execute)
            : this(execute, null)
-        {
-            _execute = execute;
-        }
+                =>  _execute = execute;
 
         public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
@@ -41,8 +35,6 @@ namespace Vartumyan.Wpf.MVVM.Core
         public virtual bool CanExecute(object parameter) => _canExecute == null || _canExecute(parameter);
 
         public virtual void Execute(object parameter) => _execute(parameter);
-
-        public void RaiseCanExecuteChanged() => CanExecuteChangedInternal.Raise(this);
     }
 
     public class RelayCommand<T> : ICommand
@@ -58,27 +50,21 @@ namespace Vartumyan.Wpf.MVVM.Core
 
         public RelayCommand(Action<T> execute)
            : this(execute, null)
-        {
-            _execute = execute;
-        }
+                => _execute = execute;
 
         public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
             if (execute == null)
-            {
                 throw new ArgumentNullException("execute");
-            }
+
             _execute = execute;
             _canExecute = canExecute;
         }
 
-        public virtual bool CanExecute(object parameter)
-        {
-            return _canExecute == null || _canExecute((T)parameter);
-        }
+        public virtual bool CanExecute(object parameter) 
+            => _canExecute == null || _canExecute((T)parameter);
 
         public virtual void Execute(object parameter)
-        =>
-            _execute((T)parameter);
+            => _execute((T)parameter);
     }
 }

@@ -1,35 +1,93 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Vartumyan.Wpf.MVVM.Core
+namespace Vartumyan.Wpf.MVVM.Core.Commands
 {
-    class DelegateCommand : ICommand
+    public class DelegateCommand : IDelegateCommand
     {
+        Action<object> execute;
+        Func<object, bool> canExecute;
+
+        // Событие, необходимое для ICommand
         public event EventHandler CanExecuteChanged;
 
-        public bool CanExecute(object parameter)
+        // Два конструктора
+        public DelegateCommand(Action<object> execute, Func<object, bool> canExecute)
         {
-            throw new NotImplementedException();
+            this.execute = execute;
+            this.canExecute = canExecute;
         }
 
-        public void Execute(object parameter)
+        public DelegateCommand(Action<object> execute)
         {
-            throw new NotImplementedException();
+            this.execute = execute;
+            this.canExecute = this.AlwaysCanExecute;
+        }
+
+        // Методы, необходимые для ICommand
+        public void Execute(object param) =>
+            execute(param);
+
+        public bool CanExecute(object param) => 
+            canExecute(param);
+
+        // Метод, необходимый для IDelegateCommand
+        public void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+                CanExecuteChanged(this, EventArgs.Empty);
+        }
+
+        // Метод CanExecute по умолчанию
+        private bool AlwaysCanExecute(object param)
+        {
+            return true;
         }
     }
 
-    class DelegateCommand<T> : ICommand
+    /// <summary>
+    /// IActiveAware????
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    class DelegateCommand<T> : IDelegateCommand
     {
+        Action<T> execute;
+        Func<T, bool> canExecute;
+
+        // Событие, необходимое для ICommand
         public event EventHandler CanExecuteChanged;
 
-        public bool CanExecute(object parameter)
+        // Два конструктора
+        public DelegateCommand(Action<T> execute, Func<T, bool> canExecute)
         {
-            throw new NotImplementedException();
+            this.execute = execute;
+            this.canExecute = canExecute;
         }
 
-        public void Execute(object parameter)
+        public DelegateCommand(Action<T> execute)
         {
-            throw new NotImplementedException();
+            this.execute = execute;
+            this.canExecute = this.AlwaysCanExecute;
+        }
+
+        // Методы, необходимые для ICommand
+        public void Execute(object param) =>
+            execute((T)param);
+
+        public bool CanExecute(object param) =>
+            canExecute((T)param);
+
+        // Метод, необходимый для IDelegateCommand
+        public void RaiseCanExecuteChanged()
+        {
+            if (CanExecuteChanged != null)
+                CanExecuteChanged(this, EventArgs.Empty);
+        }
+
+        // Метод CanExecute по умолчанию
+        private bool AlwaysCanExecute(T param)
+        {
+            return true;
         }
     }
 }

@@ -36,10 +36,5 @@ namespace Vartumyan.Wpf.MVVM.Converters
             }
             return true;
         }
-
-        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

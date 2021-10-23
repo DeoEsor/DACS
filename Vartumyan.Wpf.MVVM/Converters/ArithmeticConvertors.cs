@@ -53,11 +53,6 @@ namespace Vartumyan.Wpf.MVVM.Converters
                 default: throw new ArgumentException("Invalid operation", nameof(operation));
             }
         }
-
-        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     internal class ArithmeticConvertors : ValueConverter
@@ -69,6 +64,7 @@ namespace Vartumyan.Wpf.MVVM.Converters
 
             if (targetType.Name == "String")
                 return values.ToString();
+
             else
                 throw new NotImplementedException();
         }

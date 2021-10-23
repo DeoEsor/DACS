@@ -43,11 +43,6 @@ namespace Vartumyan.Wpf.MVVM.Converters
 						throw new ArgumentException("Incorrect operation", operation);
 				}
 			}
-
-			public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-			{
-				throw new NotImplementedException();
-			}
 		}
 
 		class StrikinglyConvertors : ValueConverter
@@ -70,11 +65,6 @@ namespace Vartumyan.Wpf.MVVM.Converters
 					default:
 						throw new ArgumentException("Incorrect operation", operation);
 				}
-			}
-
-			public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-			{
-				throw new NotImplementedException();
 			}
 		}
 

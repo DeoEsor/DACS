@@ -40,11 +40,6 @@ namespace Vartumyan.Wpf.MVVM.Converters
                     throw new ArgumentException("Incorrect operation", operation);
             }
         }
-
-        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     internal class LogicalConvertors : ValueConverter
@@ -68,11 +63,6 @@ namespace Vartumyan.Wpf.MVVM.Converters
                 default:
                     throw new ArgumentException("Incorrect operation", operation);
             }
-        }
-
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
     }
 }

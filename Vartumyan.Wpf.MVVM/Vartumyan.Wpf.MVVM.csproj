@@ -46,11 +46,13 @@
   <ItemGroup>
     <Compile Include="Converters\ArithmeticConvertors.cs" />
     <Compile Include="Converters\EqualityConvertors.cs" />
+    <Compile Include="Converters\JoinStringConverter.cs" />
     <Compile Include="Converters\LogicalConvertors.cs" />
     <Compile Include="Converters\NullableConverter.cs" />
     <Compile Include="Converters\OrderConvertors.cs" />
     <Compile Include="Converters\StrikinglyConvertors.cs" />
-    <Compile Include="Markups\MarkupConvert.cs" />
+    <Compile Include="Markups\MarkupValueConvert.cs" />
+    <Compile Include="Markups\MarkupMultiConvert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModelBase.cs" />
   </ItemGroup>

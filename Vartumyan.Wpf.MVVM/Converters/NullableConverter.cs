@@ -19,21 +19,11 @@ namespace Vartumyan.Wpf.MVVM.Converters
 
             return false;
         }
-
-        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     internal class NullableConverter : ValueConverter
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             => value is null;
-
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

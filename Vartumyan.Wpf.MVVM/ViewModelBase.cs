@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace Vartumyan.Wpf.MVVM
 {
-    public class MarkupConvert : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void RaisePropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         protected void RaisePropertiesChanged(params string[] propertiesNames)
         {
@@ -23,5 +21,10 @@ namespace Vartumyan.Wpf.MVVM
                 RaisePropertyChanged(propertyName);
         }
 
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

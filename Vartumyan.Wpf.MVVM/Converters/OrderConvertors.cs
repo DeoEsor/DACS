@@ -41,10 +41,5 @@ namespace Vartumyan.Wpf.MVVM.Converters
 					throw new ArgumentException("Incorrect operation", operation);
 			}
 		}
-
-        public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
