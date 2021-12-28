@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using Vartumyan.Wpf.MVVM.Core.Converter;
 
 namespace Vartumyan.Wpf.MVVM.Converters
 {
 
-    internal class MultiEqualityConvertors : MultiValueConverter
+    public class MultiEqualityConvertors : MultiValueConverter<MultiEqualityConvertors>
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -23,13 +24,10 @@ namespace Vartumyan.Wpf.MVVM.Converters
                     for (int i = 0; i < values.Length - 1; i++)
                         if (values[i] != values[i + 1])
                             return false;
-                    break;
-
+                    return true;
+                //TODO show to Ilya
                 case "!=":
-                    for (int i = 0; i < values.Length - 2; i++)
-                        if (values[i] == values[i + 1])
-                            return false;
-                    break;
+                    return values.Length == Enumerable.Count(Enumerable.Distinct(values));
 
                 default:
                     throw new ArgumentException("Incorrect operation", operation);

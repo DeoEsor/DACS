@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Windows;
 using Vartumyan.Wpf.MVVM.Core.Converter;
-
+using System.Xaml;
 namespace Vartumyan.Wpf.MVVM.Converters
 {
-    internal class MultiArithmeticConvertors : MultiValueConverter
+    public class MultiArithmeticConvertors : MultiValueConverter<MultiArithmeticConvertors>
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             if (!(parameter is string operation))
                 throw new ArgumentException("Parameter incorrect", nameof(parameter));
 
-            foreach (var item in values)
-                if (item == DependencyProperty.UnsetValue)
-                    return DependencyProperty.UnsetValue;
+            if (values.Any(item => item == DependencyProperty.UnsetValue))
+                return DependencyProperty.UnsetValue;
 
             dynamic[] array = new dynamic[values.Length];
 
@@ -55,24 +55,24 @@ namespace Vartumyan.Wpf.MVVM.Converters
         }
     }
 
-    internal class ArithmeticConvertors : ValueConverter
+    public class ArithmeticConvertors : ValueConverter<ArithmeticConvertors>
     {
         public override object Convert(object values, Type targetType, object parameter, CultureInfo culture)
         {
-            if (values == DependencyProperty.UnsetValue)
+            if (values is int || values == DependencyProperty.UnsetValue)
+                return values;
+            if (!int.TryParse(values.ToString(), out int value))
                 return DependencyProperty.UnsetValue;
-
-            if (targetType.Name == "String")
+            if (targetType == null || targetType == typeof(String))
                 return values.ToString();
-
-            else
-                throw new NotImplementedException();
+            
+            throw new NotImplementedException();
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            
-           switch(targetType.Name)
+            //TODO redo if targettype
+           switch(targetType.FullName)
             {
                 case "Int32":
                     if (int.TryParse(value.ToString(), out int a))

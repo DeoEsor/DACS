@@ -9,7 +9,7 @@ using Vartumyan.Wpf.MVVM.Core.Converter;
 
 namespace Vartumyan.Wpf.MVVM.Converters
 {
-	internal class OrderConvertors : MultiValueConverter
+	public class OrderConvertors : MultiValueConverter<OrderConvertors>
 	{
 		public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
 		{

@@ -8,20 +8,21 @@ using Vartumyan.Wpf.MVVM.Core.Converter;
 
 namespace Vartumyan.Wpf.MVVM.Converters
 {
-    internal class MultiNullableConverter : MultiValueConverter
+    public class MultiNullableConverter : MultiValueConverter<MultiNullableConverter>
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            foreach (var _ in from item in values
-                              where item is null
-                              select new { })
+            if (values.Any(item => item is null))
+            {
+                var unknown = new {};
                 return true;
-
+            }
             return false;
+
         }
     }
 
-    internal class NullableConverter : ValueConverter
+    public sealed class NullableConverter : ValueConverter<NullableConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             => value is null;

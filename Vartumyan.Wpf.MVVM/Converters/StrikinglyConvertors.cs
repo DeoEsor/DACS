@@ -5,7 +5,7 @@ using Vartumyan.Wpf.MVVM.Core.Converter;
 
 namespace Vartumyan.Wpf.MVVM.Converters
 {
-    internal class MultiStrikinglyConvertors : MultiValueConverter
+	public class MultiStrikinglyConvertors : MultiValueConverter<MultiStrikinglyConvertors>
 		{
 			public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
 			{
@@ -45,7 +45,7 @@ namespace Vartumyan.Wpf.MVVM.Converters
 			}
 		}
 
-		class StrikinglyConvertors : ValueConverter
+		class StrikinglyConvertors : ValueConverter<StrikinglyConvertors>
 		{
 			public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 			{

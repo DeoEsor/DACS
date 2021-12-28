@@ -23,7 +23,7 @@ namespace Vartumyan.Wpf.MVVM.Core.Commands
         /// Команда отмены
         /// </summary>
         private Command cancelCommand;
-        protected AsyncOperation asyncop;
+        
 
         /// <summary>
         /// Получение команды отмены.
@@ -153,7 +153,6 @@ namespace Vartumyan.Wpf.MVVM.Core.Commands
         public IEnumerator ReportProgress(Action action)
         {
             yield return null;
-            //TODO
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

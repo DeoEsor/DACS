@@ -9,7 +9,7 @@ using Vartumyan.Wpf.MVVM.Core.Converter;
 
 namespace Vartumyan.Wpf.MVVM.Converters
 {
-    internal class MultiLogicalConvertors : MultiValueConverter
+    public class MultiLogicalConvertors : MultiValueConverter<MultiLogicalConvertors>
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
@@ -42,7 +42,7 @@ namespace Vartumyan.Wpf.MVVM.Converters
         }
     }
 
-    internal class LogicalConvertors : ValueConverter
+    public class LogicalConvertors : ValueConverter<LogicalConvertors>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -5,7 +5,7 @@ using Vartumyan.Wpf.MVVM.Core.Converter;
 
 namespace Vartumyan.Wpf.MVVM.Converters
 {
-    public class JoinStringConverter : MultiValueConverter
+    public class JoinStringConverter : MultiValueConverter<JoinStringConverter>
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {

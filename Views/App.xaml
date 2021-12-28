@@ -1,0 +1,8 @@
+﻿<Application
+    StartupUri="Views/MainWindow.xaml"
+    x:Class="DACS.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:converter="clr-namespace:Vartumyan.Wpf;assembly=Vartumyan.Wpf.MVVM"
+    xmlns:local="clr-namespace:DACS"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+</Application>

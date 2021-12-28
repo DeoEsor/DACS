@@ -6,7 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DACS", "DACS.csproj", "{3E17ED15-E026-45EA-8E69-AA5F012BAF39}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EE734D0A-543C-467B-96C4-0D1A860AD013} = {EE734D0A-543C-467B-96C4-0D1A860AD013}
-		{283B7AA1-D108-4C85-8CD5-B26C941B1EFE} = {283B7AA1-D108-4C85-8CD5-B26C941B1EFE}
+		{B019DAA3-1D56-4A37-B7B0-9DFC5600406B} = {B019DAA3-1D56-4A37-B7B0-9DFC5600406B}
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vartumyan.Wpf.MVVM", "Vartumyan.Wpf.MVVM\Vartumyan.Wpf.MVVM.csproj", "{9A7BDB76-C392-4809-95B8-90E62F7A33A7}"
@@ -16,9 +16,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vartumyan.Wpf.MVVM", "Vartu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vartumyan.Wpf.MVVM.Core", "Vartumyan.Wpf.MVVM.Core\Vartumyan.Wpf.MVVM.Core.csproj", "{EB0F1D73-B758-4DF4-A0A4-1B974558BC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vartumyan.Wpf.Styles", "Vartumyan.Wpf.Styles\Vartumyan.Wpf.Styles.csproj", "{283B7AA1-D108-4C85-8CD5-B26C941B1EFE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vartumyan.Wpf.Controls", "Vartumyan.Wpf.Controls\Vartumyan.Wpf.Controls.csproj", "{EE734D0A-543C-467B-96C4-0D1A860AD013}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{492900A6-A8F0-4D17-AB5F-82A21C420DE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vartumyan.Wpf.Styles", "Vartumyan.Wpf.Styles\Vartumyan.Wpf.Styles.csproj", "{B019DAA3-1D56-4A37-B7B0-9DFC5600406B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,14 +40,18 @@ Global
 		{EB0F1D73-B758-4DF4-A0A4-1B974558BC3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB0F1D73-B758-4DF4-A0A4-1B974558BC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB0F1D73-B758-4DF4-A0A4-1B974558BC3A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{283B7AA1-D108-4C85-8CD5-B26C941B1EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{283B7AA1-D108-4C85-8CD5-B26C941B1EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{283B7AA1-D108-4C85-8CD5-B26C941B1EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{283B7AA1-D108-4C85-8CD5-B26C941B1EFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EE734D0A-543C-467B-96C4-0D1A860AD013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE734D0A-543C-467B-96C4-0D1A860AD013}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE734D0A-543C-467B-96C4-0D1A860AD013}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE734D0A-543C-467B-96C4-0D1A860AD013}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492900A6-A8F0-4D17-AB5F-82A21C420DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492900A6-A8F0-4D17-AB5F-82A21C420DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492900A6-A8F0-4D17-AB5F-82A21C420DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492900A6-A8F0-4D17-AB5F-82A21C420DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B019DAA3-1D56-4A37-B7B0-9DFC5600406B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B019DAA3-1D56-4A37-B7B0-9DFC5600406B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B019DAA3-1D56-4A37-B7B0-9DFC5600406B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B019DAA3-1D56-4A37-B7B0-9DFC5600406B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
